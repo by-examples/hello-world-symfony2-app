@@ -21,7 +21,11 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new My\UserBundle\MyUserBundle(),
             new Gajdaw\HelloWorldBundle\GajdawHelloWorldBundle(),
+<<<<<<< HEAD
             new tvrc\HeyBundle\tvrcHeyBundle(),
+=======
+            new Gajdaw\HeyBundle\GajdawHeyBundle(),
+>>>>>>> origin/exercise-01
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

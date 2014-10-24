@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 tvrc_hey:
     resource: "@tvrcHeyBundle/Controller/"
+=======
+gajdaw_hey:
+    resource: "@GajdawHeyBundle/Controller/"
+>>>>>>> origin/exercise-01
     type:     annotation
     prefix:   /
 
