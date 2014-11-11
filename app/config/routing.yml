@@ -1,3 +1,8 @@
+sanchez_africa:
+    resource: "@sanchezAfricaBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 gajdaw_hello_world:
     resource: "@GajdawHelloWorldBundle/Controller/"
     type:     annotation
