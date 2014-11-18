@@ -1,20 +1,18 @@
 <?php
 
-namespace Gajdaw\HelloWorldBundle\Controller;
+namespace Gajdaw\BDDTutorial\BiologyBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DefaultController extends Controller
+class FlowersController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
-     * @Method("GET")
+     * @Route("/biology/flowers/rose.html")
      * @Template()
      */
-    public function indexAction()
+    public function roseAction()
     {
         return array();
     }
