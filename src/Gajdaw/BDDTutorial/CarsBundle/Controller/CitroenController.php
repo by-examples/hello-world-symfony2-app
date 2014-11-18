@@ -16,4 +16,14 @@ class CitroenController extends Controller
     {
         return array();
     }
+    
+    
+    /**
+     * @Route("/cars/citroen/c8.html")
+     * @Template()
+     */
+    public function c8Action()
+    {
+        return array();
+    }
 }
