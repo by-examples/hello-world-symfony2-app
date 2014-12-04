@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Gajdaw\BDDTutorial\GeographyBundle\GajdawBDDTutorialGeographyBundle(),
             new Gajdaw\BDDTutorial\PoemsBundle\GajdawBDDTutorialPoemsBundle(),
             new Gajdaw\BDDTutorial\CarsBundle\GajdawBDDTutorialCarsBundle(),
+            new Wojteks\GeographyBundle\WojteksGeographyBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
