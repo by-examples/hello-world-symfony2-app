@@ -1,7 +1,7 @@
 Feature: I would like to edit caves
 
   Scenario Outline: Insert records
-    When I go to "/caves"
+    When I go to "/cave"
     Then I should not see "<cave>"
      And I follow "Create a new entry"
     Then I should see "Cave creation"
