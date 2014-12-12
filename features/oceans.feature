@@ -17,8 +17,7 @@ Feature: I would like to edit oceans
     | Atlantic Ocean | 1122   |
     | Indian Ocean | 2428 |
     | Arctic Ocean| 1872 |
-    | Southern Ocean aka Antarctic Ocean | 4465 |
-
+ 
 
   Scenario Outline: Edit records
     When I go to "/ocean"
@@ -36,7 +35,7 @@ Feature: I would like to edit oceans
 
   Examples:
     |  old-ocean        |    new-ocean    | new-length |
-    | Indian Ocean  | Antarctic Ocean | 4465 |
+    | Indian Ocean  | Southern Ocean | 4465 |
 
 
 
@@ -50,5 +49,4 @@ Feature: I would like to edit oceans
 
   Examples:
     |  ocean              |
-    | Atlantic Ocea |
-    | Southern Ocean aka Antarctic Ocean     |
+    | Atlantic Ocean |
