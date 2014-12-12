@@ -20,7 +20,7 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new My\UserBundle\MyUserBundle(),
-            new Gajdaw\HelloWorldBundle\GajdawHelloWorldBundle(),
+            new Gajdaw\BDDTutorial\GeographyBundle\GajdawBDDTutorialGeographyBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
