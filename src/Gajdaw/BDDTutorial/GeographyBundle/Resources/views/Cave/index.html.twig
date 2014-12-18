@@ -3,10 +3,11 @@
 {% block body -%}
     <h1>Cave list</h1>
 
-    <table class="records_list">
+    <table class="table table-striped">
+
         <thead>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Name</th>
                 <th>Length</th>
                 <th>Actions</th>
@@ -14,19 +15,17 @@
         </thead>
         <tbody>
         {% for entity in entities %}
-        <tr>
-            <td><a href="{{ path('cave_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-            <td><a href="{{ path('cave_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
-            <td>{{ entity.length }}</td>
-            <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('cave_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('cave_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+            <tr>
+            <td>{{ loop.index }}.</td>
+                <td>
+                    <a href="{{ path('cave_show', { 'id': entity.id }) }}">
+                        {{ entity.name }}
+                    </a>
+                </td>
+                <td>{{ entity.depth }}</td>
+                <td>
+                <a href="{{ path('cave_show', { 'id': entity.id }) }}" class="btn btn-default" role="button">show</a>
+                <a href="{{ path('cave_edit', { 'id': entity.id }) }}" class="btn btn-default" role="button">edit</a>
                 </td>
             </tr>
         {% endfor %}
