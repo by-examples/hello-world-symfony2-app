@@ -20,13 +20,17 @@ class CaveType extends AbstractType
         ;
     }
     
-    /**
+        /**
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Cave'
+            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Cave',
+                'attr' => array(
+                    'class' => 'form-horizontal',
+                    'role'  => 'form',
+                ),
         ));
     }
 
