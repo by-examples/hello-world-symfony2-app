@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Peninsula list</h1>
+
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Area</th>
+            <th>Actions</th>
+            </tr>
+    </thead>
+    <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ loop.index }}.</td>
+                <td>
+                <a href="{{ path('peninsula_show', { 'id': entity.id }) }}">
+                    {{ entity.name }}
+                </a>
+                </td>
+                <td>{{ entity.area }}</td>
+                <td>
+                    <a href="{{ path('peninsula_show', { 'id': entity.id }) }}" class="btn btn-default" role="button">show</a>
+                    <a href="{{ path('peninsula_edit', { 'id': entity.id }) }}" class="btn btn-default" role="button">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+    <p>
+        <a
+        href="{{ path('peninsula_new') }}"
+        class="btn btn-primary btn-lg"
+        role="button">
+            Create a new entry
+        </a>
+    </p>
+    {% endblock %}

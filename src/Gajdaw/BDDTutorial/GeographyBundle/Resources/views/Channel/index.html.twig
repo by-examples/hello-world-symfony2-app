@@ -1,0 +1,39 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Channel list</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Channel</th>
+                <th>Length</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ loop.index }}.</td>
+                <td><a href="{{ path('channel_show', { 'id': entity.id }) }}">{{ entity.channel }}</a></td>
+                <td>{{ entity.length }}</td>
+                <td>
+                    <a href="{{ path('channel_show', { 'id': entity.id }) }}" class="btn btn-default" role="button">show</a>
++                   <a href="{{ path('channel_edit', { 'id': entity.id }) }}" class="btn btn-default" role="button">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <p>
+        <a
+            href="{{ path('channel_new') }}"
+            class="btn btn-primary btn-lg"
+            role="button">
+            Create a new entry
+        </a>
+    </p>
+    </ul>
+    {% endblock %}
