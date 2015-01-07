@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Country list</h1>
+    
+    <div class="count">
+        Number of records: {{ pagination.getTotalItemCount }}
+    </div>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>    
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Country</th>
+                <th>Area</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for country in pagination %}
+            <tr>
+                <td>{{ loop.index }}.</td>
+                <td><a href="{{ path('country_show', { 'id': country.id }) }}">{{ country.country }}</a></td>
+                <td>{{ country.area }}</td>
+                <td>
+                    <a href="{{ path('country_show', { 'id': country.id }) }}" class="btn btn-default" role="button">show</a>
+                    <a href="{{ path('country_edit', { 'id': country.id }) }}" class="btn btn-default" role="button">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <p>
+            <a
+                href="{{ path('country_new') }}"
+                class="btn btn-primary btn-lg"
+                role="button">
+                Create a new entry
+            </a>
+        </p>
+    {% endblock %}

@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Peninsula list</h1>
+
+    <div class="count">
+        Number of records: {{ pagination.getTotalItemCount }}
+    </div>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Area</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for peninsula in pagination %}
+        <tr>
+            <td>{{ loop.index }}.</td>
+            <td><a href="{{ path('peninsula_show', { 'id': peninsula.id }) }}">{{ peninsula.name }}</a></td>
+            <td>{{ peninsula.area }}</td>
+            <td>
+                <a href="{{ path('peninsula_show', { 'id': peninsula.id }) }}" class="btn btn-default" role="button">show</a>
+                <a href="{{ path('peninsula_edit', { 'id': peninsula.id }) }}" class="btn btn-default" role="button">edit</a>
+            </td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+
+    <p>
+        <a
+        href="{{ path('peninsula_new') }}"
+        class="btn btn-primary btn-lg"
+        role="button">
+            Create a new entry
+        </a>
+    </p>
+    {% endblock %}

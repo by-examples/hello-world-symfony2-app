@@ -20,7 +20,8 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new My\UserBundle\MyUserBundle(),
-            new Gajdaw\HelloWorldBundle\GajdawHelloWorldBundle(),
+            new Gajdaw\BDDTutorial\GeographyBundle\GajdawBDDTutorialGeographyBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -36,4 +37,15 @@ class AppKernel extends Kernel
     {
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
     }
+
+    public function getCacheDir()
+    {
+        return '/tmp/symfony2app/app/cache/'.$this->environment.'/cache';
+    }
+
+    public function getLogDir()
+    {
+        return '/tmp/symfony2app/app/logs/'.$this->environment.'/logs';
+    }
+
 }

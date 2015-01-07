@@ -3,11 +3,168 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {% stylesheets '@GajdawBDDTutorialGeographyBundle/Resources/public/css/*' filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container myWidth">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ path('homepage') }}">Geography</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    {#<ul class="nav navbar-nav navbar-right">#}
+
+
+
+
+
+
+
+        <ul class="nav navbar-nav navbar-right">
+            <!-- rivers -->
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('river') }}" role="button" aria-expanded="false">
+                    Rivers <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('river') }}">list</a></li>
+                    <li><a href="{{ path('river_new') }}">create new</a></li>
+                </ul>
+            </li>
+            <!-- rivers -->
+
+            <!-- oceans -->
+            <!-- oceans -->
+
+            <!-- deserts -->
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('desert') }}" role="button" aria-expanded="false">
+                    Deserts <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('desert') }}">list</a></li>
+                    <li><a href="{{ path('desert_new') }}">create new</a></li>
+                </ul>
+            </li>
+            <!-- deserts -->
+
+            <!-- seas -->
+            <!-- seas -->
+
+            <!-- lakes -->
+            <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('lake') }}" role="button" aria-expanded="false">
+        Lakes <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+        <li><a href="{{ path('lake') }}">list</a></li>
+        <li><a href="{{ path('lake_new') }}">create new</a></li>
+      </ul>
+            </li>
+            <!-- lakes -->
+
+            <!-- mountains -->
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('mountain') }}" role="button" aria-expanded="false">
+                    Mountains <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('mountain') }}">list</a></li>
+                    <li><a href="{{ path('mountain_new') }}">create new</a></li>
+                </ul>
+            </li>
+            <!-- mountains -->
+
+            <!-- continents -->
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('continent') }}" role="button" aria-expanded="false">
+                    Continents <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('continent') }}">list</a></li>
+                    <li><a href="{{ path('continent_new') }}">create new</a></li>
+                </ul>
+            </li>
+            <!-- continents -->
+
+            <!-- countries -->
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('country') }}" role="button" aria-expanded="false">
+                    Countries <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('country') }}">list</a></li>
+                    <li><a href="{{ path('country_new') }}">create new</a></li>
+                </ul>
+            </li>
+            <!-- countries -->
+            
+            <!-- channels -->
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('channel') }}" role="button" aria-expanded="false">
+                    Channels <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('channel') }}">list</a></li>
+                    <li><a href="{{ path('channel_new') }}">create new</a></li>
+                </ul>
+            </li>
+            <!-- channels -->
+            
+            <!-- cities -->
+            <!-- cities -->
+            
+            <!-- straits -->
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('strait') }}" role="button" aria-expanded="false">
+                    Straits <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('strait') }}">list</a></li>
+                    <li><a href="{{ path('strait_new') }}">create new</a></li>
+                </ul>
+            </li>
+            <!-- straits -->
+            
+            <!-- peninsulas -->
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('peninsula') }}" role="button" aria-expanded="false">
+                    Peninsulas <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('peninsula') }}">list</a></li>
+                    <li><a href="{{ path('peninsula_new') }}">create new</a></li>
+                </ul>
+            </li>           
+            <!-- peninsulas -->      
+            
+            <!-- beaches -->
+            <li><a href="{{ path('beach') }}">Beaches</a></li>
+            <!-- beaches -->
+        </ul>
+
+
+                    {#</ul>#}
+                </div>
+            </div>
+        </div>
+
+        <div class="container myWidth">
+            {% block body %}{% endblock %}
+        </div>
+
+        {% block javascripts %}
+            {% javascripts '@GajdawBDDTutorialGeographyBundle/Resources/public/js/*' %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
     </body>
 </html>
