@@ -21,7 +21,7 @@ class ContinentController extends Controller
     /**
      * Lists all Continent entities.
      *
-     * @Route("/pager/{page}", name="continent", requirements={"page": "\d+"})
+     * @Route("/{page}", name="continent")
      * @Method("GET")
      * @Template()
      */
