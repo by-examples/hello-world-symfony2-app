@@ -21,14 +21,18 @@ class BeachType extends AbstractType
     }
     
     /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Beach'
-        ));
-    }
+ * @param OptionsResolverInterface $resolver
+ */
+public function setDefaultOptions(OptionsResolverInterface $resolver)
+{
+    $resolver->setDefaults(array(
+        'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Beach',
+            'attr' => array(
+                'class' => 'form-horizontal',
+                'role'  => 'form',
+            ),
+    ));
+}
 
     /**
      * @return string
