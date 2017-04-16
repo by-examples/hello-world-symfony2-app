@@ -3,7 +3,7 @@
 {% block body -%}
     <h1>Beach list</h1>
 
-    <table class="records_list">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -15,29 +15,24 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('beach_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td><a href="{{ path('beach_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
+                <td>{{ loop.index }}.</td>
+                <td><a href="{{ path('beach_show', { 'id': entity.id }) }}">{{ entity.beach }}</a></td>
                 <td>{{ entity.size }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('beach_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('beach_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    <a href="{{ path('beach_show', { 'id': entity.id }) }}" class="btn btn-default" role="button">show</a>
++                   <a href="{{ path('beach_edit', { 'id': entity.id }) }}" class="btn btn-default" role="button">edit</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('beach_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+    <p>
+        <a
+            href="{{ path('beach_new') }}"
+            class="btn btn-primary btn-lg"
+            role="button">
+            Create a new entry
+        </a>
+    </p>    
     {% endblock %}
